@@ -15,6 +15,9 @@ runOnStartup(async runtime =>
 	// Note layouts, objects etc. are not yet available.	
 	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
 	kb = new KeyboardManager(runtime);
+	kb.onDAS.subscribe((data) => {
+		console.log(`Ocurrió DAS: ${data}`);
+	});
 });
 
 async function OnBeforeProjectStart(runtime : IRuntime)

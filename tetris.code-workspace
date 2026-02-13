@@ -1,14 +1,23 @@
 {
 	"folders": [
 		{
-			"path": "scripts"
+			"path": "."
 		}
 	],
 	"settings": {
 		"files.exclude": {
 			"**/*.js": true,
 			"**/*.js.map": true,
-            "ts-defs": true
+            "ts-defs": true,
+			"eventSheets": true,
+			"flowcharts": true,
+			"icons": true,
+			"images": true,
+			"layouts": true,
+			"objectTypes": true,
+			"timelines": true,
+			"**/*.uistate.json": true,
+			"**/*.c3proj": true,
 		}
 	}
 }

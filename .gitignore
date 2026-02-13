@@ -1,2 +1,4 @@
 *.uistate.json
 ts-defs
+*.js
+*.js.map

@@ -68,6 +68,14 @@
 							"script-info": {
 								"purpose": "none"
 							}
+						},
+						{
+							"name": "event.js",
+							"type": "application/javascript",
+							"sid": 924728615417307,
+							"script-info": {
+								"purpose": "none"
+							}
 						}
 					],
 					"subfolders": [],
