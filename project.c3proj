@@ -50,9 +50,9 @@
 		"script": {
 			"items": [
 				{
-					"name": "main.ts",
-					"type": "application/typescript",
-					"sid": 653057722284003,
+					"name": "main.js",
+					"type": "application/javascript",
+					"sid": 969260895406806,
 					"script-info": {
 						"purpose": "main"
 					}
@@ -62,9 +62,9 @@
 				{
 					"items": [
 						{
-							"name": "keyboardManager.ts",
-							"type": "application/typescript",
-							"sid": 846009665504551,
+							"name": "keyboard_manager.js",
+							"type": "application/javascript",
+							"sid": 126612018548602,
 							"script-info": {
 								"purpose": "none"
 							}
@@ -73,7 +73,8 @@
 					"subfolders": [],
 					"name": "managers"
 				}
-			]
+			],
+			"autoReloadOnPreview": true
 		},
 		"sound": {
 			"items": [],

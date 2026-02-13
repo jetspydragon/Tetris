@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "scripts"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/*.js": true,
+			"**/*.js.map": true,
+            "ts-defs": true
+		}
+	}
+}
