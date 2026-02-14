@@ -80,6 +80,20 @@
 					],
 					"subfolders": [],
 					"name": "managers"
+				},
+				{
+					"items": [
+						{
+							"name": "piece.js",
+							"type": "application/javascript",
+							"sid": 894400149920129,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "tetris"
 				}
 			],
 			"autoReloadOnPreview": true

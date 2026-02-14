@@ -1,12 +1,13 @@
 // Import any other script files here, e.g.:
 // import * as myModule from "./mymodule.js";
 import { KeyboardManager } from "./managers/keyboard_manager.js";
+import { Piece } from "./tetris/piece.js";
 
 const timeToFall:number = 1.0;
 
 let timePassed:number = 0;
 let kb:KeyboardManager;
-let piece:InstanceType.Piece;
+let piece:Piece;
 
 runOnStartup(async runtime =>
 {
@@ -30,8 +31,8 @@ async function OnBeforeProjectStart(runtime : IRuntime)
 	runtime.addEventListener("tick", () => Tick(runtime));
 	
 	const width = runtime.layout.width;
-	piece = runtime.objects.Piece.createInstance(0, 0, 0);
-	piece.setPosition(width/2 - piece.width/2, 100);
+	
+	piece = new Piece(runtime, "I", 100, 100);
 }
 
 function Tick(runtime : IRuntime)
@@ -43,18 +44,18 @@ function Tick(runtime : IRuntime)
 	if (timePassed >= timeToFall && piece)
 	{
 		timePassed = 0;
-		piece.y += piece.height;
+		piece.moveDown();
 	}
 
 	if (piece)
 	{
 		if (kb.isKeyPressed("ArrowLeft"))
 		{
-			piece.x -= piece.width
+			piece.moveLeft();
 		}
 		else if (kb.isKeyPressed("ArrowRight"))
 		{
-			piece.x += piece.width
+			piece.moveRight();
 		}
 	}
 }
