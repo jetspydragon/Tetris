@@ -90,6 +90,14 @@
 							"script-info": {
 								"purpose": "none"
 							}
+						},
+						{
+							"name": "piece_deck.js",
+							"type": "application/javascript",
+							"sid": 615035065285954,
+							"script-info": {
+								"purpose": "none"
+							}
 						}
 					],
 					"subfolders": [],

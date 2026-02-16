@@ -1,6 +1,6 @@
 import { Event } from "./event.js";
 
-type Keycode = "ArrowLeft" | "ArrowRight" | "ArrowUp" | "ArrowDown";
+type Keycode = "ArrowLeft" | "ArrowRight" | "ArrowUp" | "ArrowDown" | "KeyC";
 
 export class KeyboardManager
 {
@@ -38,18 +38,15 @@ export class KeyboardManager
 
     private onKeyDown(e:KeyboardEvent)
     {
-        this.keysNow.set(e.key, true);
-        this.keyPressed.set(e.key, 0);        
+        console.log(e);
+        this.keysNow.set(e.code, true);
+        this.keyPressed.set(e.code, 0);        
     }
 
     private onKeyUp(e:KeyboardEvent)
     {
-        this.keysNow.set(e.key, false);
-        
-        this.keyPressed.forEach((value, key) => {
-            console.log(`${key} presionada durante ${value} segundos.`);
-        });
-        this.keyPressed.delete(e.key);
+        this.keysNow.set(e.code, false);
+        this.keyPressed.delete(e.code);
     }
 
     public isKeyPressed(key: Keycode):boolean

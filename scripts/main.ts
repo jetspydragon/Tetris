@@ -1,13 +1,18 @@
 // Import any other script files here, e.g.:
 // import * as myModule from "./mymodule.js";
 import { KeyboardManager } from "./managers/keyboard_manager.js";
-import { Piece } from "./tetris/piece.js";
+import { Piece, PieceTypes } from "./tetris/piece.js";
+import { PieceDek } from "./tetris/piece_deck.js";
 
-const timeToFall:number = 1.0;
+const timeToFall:number = 0.5;
 
 let timePassed:number = 0;
 let kb:KeyboardManager;
 let piece:Piece;
+let deck:PieceDek;
+
+let xStartPos:number = 100;
+let yStartPos:number = 100;
 
 runOnStartup(async runtime =>
 {
@@ -31,8 +36,8 @@ async function OnBeforeProjectStart(runtime : IRuntime)
 	runtime.addEventListener("tick", () => Tick(runtime));
 	
 	const width = runtime.layout.width;
-	
-	piece = new Piece(runtime, "I", 100, 100);
+	deck = new PieceDek(runtime);
+	piece = new Piece(runtime, deck.nextType(), xStartPos, yStartPos);
 }
 
 function Tick(runtime : IRuntime)
@@ -57,5 +62,15 @@ function Tick(runtime : IRuntime)
 		{
 			piece.moveRight();
 		}
+		else if (kb.isKeyPressed("ArrowUp"))
+		{
+			piece.rotate();
+		}
+		else if (kb.isKeyPressed("KeyC"))
+		{
+			piece.destroy();
+			piece = new Piece(runtime, deck.nextType(), xStartPos, yStartPos);
+		}
 	}
 }
+
