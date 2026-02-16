@@ -6,16 +6,14 @@ export class KeyboardManager
 {
     public onDAS = new Event<number>();
 
-    private runtime:IRuntime;
     private keysNow:Map<string,boolean> = new Map<string,boolean>();
     private keysBefore:Map<string,boolean> = new Map<string,boolean>();
     private keyPressed:Map<string, number> = new Map<string, number>();
 
     private das:number = 1;
 
-    constructor(runtime:IRuntime)
+    constructor(private runtime:IRuntime)
     {
-        this.runtime = runtime;
         this.runtime.addEventListener("tick2", () => this.postTick(this.runtime));
         this.runtime.addEventListener("keydown", (e) => this.onKeyDown(e));
         this.runtime.addEventListener("keyup", (e) => this.onKeyUp(e));
@@ -38,7 +36,6 @@ export class KeyboardManager
 
     private onKeyDown(e:KeyboardEvent)
     {
-        console.log(e);
         this.keysNow.set(e.code, true);
         this.keyPressed.set(e.code, 0);        
     }

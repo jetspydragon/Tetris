@@ -72,21 +72,16 @@ const PieceData: Record<PieceType, PieceDefinition> = {
 
 export class Piece
 {
-    private runtime:IRuntime;
-    private type:PieceType;
     private blocks:ISpriteInstance[] = [];
     private rotationId:number = 0;
-    private x:number = 0;
-    private y:number = 0;
     private w:number = 0;
     private h:number = 0;
 
-    constructor(runtime:IRuntime, type:PieceType, x:number, y:number)
+    constructor(
+        private runtime:IRuntime, private type:PieceType, 
+        private x:number, private y:number
+    )
     {
-        this.runtime = runtime;
-        this.type = type;
-        this.x = x;
-        this.y = y;
         for (let i = 0; i < 4; i++) {
             this.blocks[i] = runtime.objects.Piece.createInstance(0, 0, 0);
         }

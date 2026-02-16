@@ -25,7 +25,9 @@
 	"objectTypes": {
 		"items": [
 			"Piece",
-			"Keyboard"
+			"Keyboard",
+			"Cell",
+			"Border"
 		],
 		"subfolders": []
 	},
@@ -73,6 +75,14 @@
 							"name": "event.js",
 							"type": "application/javascript",
 							"sid": 924728615417307,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "game_manager.js",
+							"type": "application/javascript",
+							"sid": 503580548857484,
 							"script-info": {
 								"purpose": "none"
 							}

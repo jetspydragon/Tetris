@@ -2,10 +2,9 @@ import { PieceTypes, Piece, type PieceType } from "./piece.js";
 
 export class PieceDek
 {
-    private runtime:IRuntime;
     private deck:PieceType[] = [];
 
-    constructor(runtime:IRuntime)
+    constructor(private runtime:IRuntime)
     {
         this.runtime = runtime;
         this.fillDeck();
